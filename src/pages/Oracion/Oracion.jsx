@@ -4,6 +4,8 @@ import MainTitle from "../../components/MainTitle";
 
 import oraciones from "../../api/services/oraciones";
 import { OracionStyled } from "./Oracion.styles";
+import ButtonBack from "../../components/ButtonBack";
+import Paragraph from "../../components/Paragraph";
 
 export default function Oracion() {
   const params = useParams();
@@ -12,9 +14,10 @@ export default function Oracion() {
   )[0];
   return (
     <OracionStyled>
+      <ButtonBack />
       <MainTitle title={oracion.name} />
-      {oracion.contenido.map((paragraph) => (
-        <p>{paragraph}</p>
+      {oracion.contenido.map((paragraph, i) => (
+        <Paragraph key={i}>{paragraph}</Paragraph>
       ))}
     </OracionStyled>
   );

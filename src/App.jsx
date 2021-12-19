@@ -7,6 +7,8 @@ import Main from "./components/Main";
 
 import Home from "./pages/Home";
 import Oracion from "./pages/Oracion";
+import {ConsideracionList} from "./pages/Consideracion/ConsideracionList";
+import {ConsideracionDia} from "./pages/Consideracion/ConsideracionDia";
 
 function App() {
   return (
@@ -17,7 +19,12 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} exact />
             <Route path="/oracion/:name" element={<Oracion />} />
-            <Route path="/consideracion/:dia" element={<Home />} />
+            <Route
+              path="/consideracion"
+              element={<ConsideracionList />}
+              exact
+            />
+            <Route path="/consideracion/:dia" element={<ConsideracionDia />} />
             <Route path="/gozos" element={<Home />} />
             <Route path="/villancicos" element={<Home />} exact />
             <Route path="/villancicos/:name" element={<Home />} />
