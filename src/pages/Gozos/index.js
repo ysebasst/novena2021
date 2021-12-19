@@ -1,0 +1,1 @@
+export { GozosList } from "./GozosList";

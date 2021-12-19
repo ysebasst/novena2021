@@ -7,8 +7,9 @@ import Main from "./components/Main";
 
 import Home from "./pages/Home";
 import Oracion from "./pages/Oracion";
-import {ConsideracionList} from "./pages/Consideracion/ConsideracionList";
-import {ConsideracionDia} from "./pages/Consideracion/ConsideracionDia";
+import { ConsideracionList } from "./pages/Consideracion/ConsideracionList";
+import { ConsideracionDia } from "./pages/Consideracion/ConsideracionDia";
+import { GozosList } from "./pages/Gozos";
 
 function App() {
   return (
@@ -25,7 +26,7 @@ function App() {
               exact
             />
             <Route path="/consideracion/:dia" element={<ConsideracionDia />} />
-            <Route path="/gozos" element={<Home />} />
+            <Route path="/gozos" element={<GozosList />} />
             <Route path="/villancicos" element={<Home />} exact />
             <Route path="/villancicos/:name" element={<Home />} />
             <Route path="/configuracion" element={<Home />} exact />
