@@ -56,17 +56,6 @@ export const MenuListStyled = styled.ul`
   transform-origin: left;
   transform: ${({ active }) => (active ? "scale(1, 1)" : "scale(0, 1)")};
   transition: transform 0.3s;
-
-  &::before {
-    content: "";
-    z-index: -1;
-    position: fixed;
-    top: 3.5rem;
-    left: 0;
-    width: 100%;
-    height: calc(100vh - 3.5rem);
-    // background-color: #00000080;
-  }
 `;
 
 export const MenuItemStyled = styled.li`
