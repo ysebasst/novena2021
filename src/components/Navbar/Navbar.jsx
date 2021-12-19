@@ -1,65 +1,54 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
-import "./Navbar.scss";
+
+import {
+  NavStyled,
+  NavWrapperStyled,
+  NavToggleStyled,
+  NavBrandStyled,
+  MenuListStyled,
+  MenuItemStyled,
+} from "./Navbar.styles";
+
+import BarsSVG from "./BarsSVG";
 
 function Navbar() {
   const [menuActive, setMenuActive] = useState(false);
 
   const routes = [
-    "Inicio",
-    "Oración para todos los días",
-    "Consideraciones",
-    "Oración a la santisima vírgen",
-    "Oración a san José",
-    "Gozos navideños",
-    "Oración niño jesus",
-    "Villancicos",
-    "Configuración",
+    { path: "/", title: "Inicio" },
+    { path: "/oracion/todos-los-dias", title: "Oración para todos los días" },
+    { path: "/consideracion", title: "Consideraciones" },
+    {
+      path: "/oracion/santisima-virgen",
+      title: "Oración a la santísima vírgen",
+    },
+    { path: "/oracion/san-jose", title: "Oración a san José" },
+    { path: "/gozos", title: "Gozos navideños" },
+    { path: "/oracion/nino-jesus", title: "Oración niño jesus" },
+    { path: "/villancicos", title: "Villancicos" },
+    { path: "/configuracion", title: "Configuración" },
   ];
 
-  const normalizeRoute = (route) => {
-    if (route === "Inicio") {
-      return "";
-    }
-    return route
-      .toLowerCase()
-      .normalize("NFD")
-      .replace(/[\u0300-\u036f]/g, "")
-      .replace(/ /g, "-");
-  };
-
   return (
-    <nav className="nav">
-      <div className="nav__wrapper">
-        <div
-          className="nav__toggle"
+    <NavStyled>
+      <NavWrapperStyled>
+        <NavToggleStyled
           role="button"
           onClick={() => setMenuActive(!menuActive)}
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="40"
-            height="40"
-            viewBox="0 0 24 24"
-            fill="currentColor"
-          >
-            <path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"></path>
-          </svg>
-        </div>
-        <h1 className="nav__brand">Novena Aguinaldos</h1>
-        <ul
-          className={
-            "nav__menu nav-menu" + (menuActive ? " nav-menu--active" : "")
-          }
-        >
+          <BarsSVG />
+        </NavToggleStyled>
+        <NavBrandStyled>Novena Aguinaldos</NavBrandStyled>
+        <MenuListStyled active={menuActive}>
           {routes.map((route) => (
-            <li className="nav-menu__item" key={route}>
-              <NavLink to={`/${normalizeRoute(route)}`}>{route}</NavLink>
-            </li>
+            <MenuItemStyled key={route.title}>
+              <NavLink to={route.path} onClick={()=>setMenuActive(false)}>{route.title}</NavLink>
+            </MenuItemStyled>
           ))}
-        </ul>
-      </div>
-    </nav>
+        </MenuListStyled>
+      </NavWrapperStyled>
+    </NavStyled>
   );
 }
 

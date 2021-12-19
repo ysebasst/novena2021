@@ -1,3 +1,5 @@
-export default function MainTitle(props) {
-    return <h2 className="main-title" {...props}></h2>
+import { MainTitleStyled } from "./MainTitle.styles";
+
+export default function MainTitle({ title, ...props }) {
+  return <MainTitleStyled {...props}>{title}</MainTitleStyled>;
 }

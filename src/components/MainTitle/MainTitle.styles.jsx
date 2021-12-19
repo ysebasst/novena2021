@@ -1,5 +1,7 @@
-import Styled from "styled-components";
+import styled from "styled-components";
 
-const StyledMainTitle = Styled.h2`
-  
+export const MainTitleStyled = styled.h2`
+  margin: ${({ margin }) => (margin ? margin : ".5rem")} 0;
+  font-size: 1.5rem;
+  font-weight: bold;
 `;

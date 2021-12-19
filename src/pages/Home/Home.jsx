@@ -1,9 +1,11 @@
+import { HomeStyled } from "./Home.styles";
+
+import MainTitle from "../../components/MainTitle";
 
 export default function Home() {
   return (
-    <div>
-      <h1>Home</h1>
-    </div>
+    <HomeStyled>
+      <MainTitle title="Home" />
+    </HomeStyled>
   );
 }
-
