@@ -1,4 +1,4 @@
-export default [
+const oraciones = [
   {
     path: "todos-los-dias",
     name: "Oración para todos los días",
@@ -36,3 +36,5 @@ export default [
     ],
   },
 ];
+
+export default oraciones;
