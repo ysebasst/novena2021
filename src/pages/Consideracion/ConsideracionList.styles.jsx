@@ -11,7 +11,7 @@ export const ConsideracionItemStyled = styled(Link)`
   padding: 0.5rem;
   margin-bottom: 0.5rem;
   font-size: 1.25rem;
-  font-weight: bold;
+  /* font-weight: bold; */
   text-decoration: none;
   color: inherit;
   border: 1px solid #00000040;
