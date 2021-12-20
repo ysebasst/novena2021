@@ -22,6 +22,9 @@ export const ConsideracionItemStyled = styled(Link)`
 
 export const ConsideracionIsActualDateStyled = styled.span`
   position: absolute;
-  right: 1.5rem;
-  color: green;
+  right: 0.5rem;
+  padding: 0.0625rem 0.25rem;
+  color: #ffffff;
+  background-color: green;
+  border-radius: 0.125rem;
 `;
