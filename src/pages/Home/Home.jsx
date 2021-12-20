@@ -8,7 +8,7 @@ export default function Home() {
     { path: "/consideracion", title: "Consideraciones" },
     {
       path: "/oracion/santisima-virgen",
-      title: "Oracion a la santísima vírgen",
+      title: "Oración a la santísima vírgen",
     },
     { path: "/oracion/san-jose", title: "Oración a san José" },
     { path: "/gozos", title: "Gozos navideños" },

@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { NavLink, useLocation } from "react-router-dom";
 
 import {
   NavStyled,
@@ -14,6 +14,12 @@ import BarsSVG from "./BarsSVG";
 
 function Navbar() {
   const [menuActive, setMenuActive] = useState(false);
+
+  const location = useLocation();
+
+  useEffect(() => {
+    setMenuActive(false);
+  }, [location]);
 
   const routes = [
     { path: "/", title: "Inicio" },
@@ -43,7 +49,7 @@ function Navbar() {
         <MenuListStyled active={menuActive}>
           {routes.map((route) => (
             <MenuItemStyled key={route.title}>
-              <NavLink to={route.path} onClick={()=>setMenuActive(false)}>{route.title}</NavLink>
+              <NavLink to={route.path}>{route.title}</NavLink>
             </MenuItemStyled>
           ))}
         </MenuListStyled>
