@@ -69,6 +69,7 @@ export const MenuItemStyled = styled.li`
     color: inherit;
     font-weight: bold;
     text-decoration: none;
+    user-select: none;
     &.active {
       color: var(--blue);
     }
