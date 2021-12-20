@@ -10,6 +10,7 @@ import Oracion from "./pages/Oracion";
 import { ConsideracionList } from "./pages/Consideracion/ConsideracionList";
 import { ConsideracionDia } from "./pages/Consideracion/ConsideracionDia";
 import { GozosList } from "./pages/Gozos";
+import { Villancico, VillancicosList } from "./pages/Villancicos";
 
 function App() {
   return (
@@ -27,8 +28,8 @@ function App() {
             />
             <Route path="/consideracion/:dia" element={<ConsideracionDia />} />
             <Route path="/gozos" element={<GozosList />} />
-            <Route path="/villancicos" element={<Home />} exact />
-            <Route path="/villancicos/:name" element={<Home />} />
+            <Route path="/villancicos" element={<VillancicosList />} exact />
+            <Route path="/villancicos/:name" element={<Villancico />} />
             <Route path="/configuracion" element={<Home />} exact />
             <Route path="*" element={<Home />} />
           </Routes>

@@ -17,17 +17,4 @@ export const HomeStyled = styled.div`
   position: relative;
   max-width: 100%;
   min-height: 100%;
-  /* background-image: url(/static/novena.jpg);
-  background-position: center center;
-  background-size: cover;
-  background-attachment: fixed; */
-  /* &::before {
-    position: absolute;
-    content: "";
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #00000080;
-  } */
 `;

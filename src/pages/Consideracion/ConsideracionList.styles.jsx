@@ -1,23 +1,13 @@
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+
+import {Option} from '../../components/Option'
 
 export const ConsideracionListStyled = styled.section`
   padding: 1.5rem;
 `;
 
-export const ConsideracionItemStyled = styled(Link)`
+export const ConsideracionItemStyled = styled(Option)`
   position: relative;
-  display: block;
-  padding: 0.5rem;
-  margin-bottom: 0.5rem;
-  font-size: 1.25rem;
-  /* font-weight: bold; */
-  text-decoration: none;
-  color: inherit;
-  border: 1px solid #00000040;
-  &:last-of-type {
-    margin-bottom: 0;
-  }
 `;
 
 export const ConsideracionIsActualDateStyled = styled.span`
