@@ -4,6 +4,7 @@ import MainTitle from "../../components/MainTitle";
 
 import gozos from "../../api/services/gozos";
 import Paragraph from "../../components/Paragraph";
+import Title from "../../components/Title";
 
 const GozosListStyled = styled.section`
   padding: 1.5rem;
@@ -28,7 +29,7 @@ export const GozosList = () => {
       <MainTitle title={"Gozos"} />
       {gozos.map((gozo, i) => (
         <GozoStyled key={i}>
-          <h3>{gozo.title}</h3>
+          <Title>{gozo.title}</Title>
           <Paragraph>
             {gozo.contenido[0].map((frase) => (
               <FraseStyled key={frase}>{frase}</FraseStyled>

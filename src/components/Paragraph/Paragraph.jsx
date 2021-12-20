@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 const ParagraphStyled = styled.p`
   font-size: ${(props) => props.fontSize};
+  user-select: none;
 `;
 
 export const Paragraph = ({ children, ...props }) => {

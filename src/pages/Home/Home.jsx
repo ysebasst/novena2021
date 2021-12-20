@@ -1,6 +1,7 @@
 import { HomeStyled, ImgStyled, InfoStyled } from "./Home.styles";
 
 import MainTitle from "../../components/MainTitle";
+import Paragraph from "../../components/Paragraph";
 
 export default function Home() {
   const orden = [
@@ -22,9 +23,9 @@ export default function Home() {
       <InfoStyled>
         <MainTitle title="Orden Novena de Navidad" />
         {orden.map((option, i) => (
-          <p>
+          <Paragraph>
             {i + 1}. {option.title}
-          </p>
+          </Paragraph>
         ))}
       </InfoStyled>
     </HomeStyled>
