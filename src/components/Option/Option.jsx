@@ -1,9 +1,11 @@
+import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 const OptionStyled = styled(Link)`
   display: block;
   padding: 0.5rem;
+  font-size: ${(props) => props.fontSize};
   text-decoration: none;
   color: inherit;
   user-select: none;
@@ -15,7 +17,13 @@ const OptionStyled = styled(Link)`
 `;
 
 export const Option = (props) => {
-  return <OptionStyled {...props} />;
+  const [fontSize, setFontSize] = useState("20px");
+  useEffect(() => {
+    if (localStorage.getItem("fontSize")) {
+      setFontSize(localStorage.getItem("fontSize"));
+    }
+  }, []);
+  return <OptionStyled fontSize={fontSize} {...props} />;
 };
 
 export default Option;
